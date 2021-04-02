@@ -1,1 +1,25 @@
-body{scrollbar-darkshadow-color:#f0f8ff}
+@import url(../vendor/normalize.css);
+@import url(../blocks/body/body.css);
+@import url(../blocks/wrapper/wrapper.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/header__logo.css);
+@import url(../blocks/header/header__line.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/profile__add-button.css);
+@import url(../blocks/profile/profile__avatar.css);
+@import url(../blocks/profile/profile__description.css);
+@import url(../blocks/profile/profile__edit-button.css);
+@import url(../blocks/profile/profile__info.css);
+@import url(../blocks/profile/profile__username.css);
+@import url(../blocks/profile/profile__edit-button-image.css);
+@import url(../blocks/profile/profile__add-button-image.css);
+@import url(../blocks/profile/profile__username-wrapper.css);
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/elements__element.css);
+@import url(../blocks/elements/elements__header.css);
+@import url(../blocks/elements/elements__image.css);
+@import url(../blocks/elements/elements__like.css);
+@import url(../blocks/elements/elements__rectangle.css);
+@import url(../blocks/elements/elements__like-image.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/footer__text.css);

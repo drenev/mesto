@@ -10,63 +10,81 @@
 </head>
 
 <body class="body">
-    <header class="header">
-        <img src="" alt="" class="header__logo">
-        <div class="header line"></div>
-    </header>
-    <section class="profile">
-        <img src="" alt="" class="profile__avatar">
-        <div class="profile__info">
-            <h1 class="profile__username"></h1>
-            <p class="profile__description"></p>
-            <button class="profile__edit-button"></button>
-        </div>
-        <button class="profile__add-button"></button>
-    </section>
-    <section class="edit__form" style="display: none;">
+    <div class="wrapper">
+        <header class="header">
+            <img src="./images/header__logo.svg" alt="Логотип" class="header__logo">
+            <div class="header__line"></div>
+        </header>
+        <section class="profile">
+            <img src="./images/profile__avatar.jpg" alt="Аватарка" class="profile__avatar">
+            <div class="profile__info">
+                <div class="profile__username-wrapper">
+                    <h1 class="profile__username">Жак-Ив Кусто</h1>
+                    <button class="profile__edit-button"><img src="./images/profile__edit-button.svg" alt="Кнопка"
+                            class="profile__edit-button-image"></button>
+                </div>
+                <p class="profile__description">Исследователь океана</p>
+            </div>
+            <button class="profile__add-button"><img src="./images/profile__add-button-image.svg" alt="Кнопка"
+                    class="profile__add-button-image"></button>
+        </section>
+        <section class="edit__form" style="display: none;">
 
-    </section>
-    <main class="elements">
-        <div class="elements__element">
-            <img src="" alt="" class="elements__image">
-            <div class="elements__rectangle"></div>
-            <h2 class="elements__header"></h2>
-            <button class="elements__like"></button>
-        </div>
-        <div class="elements__element">
-            <img src="" alt="" class="elements__image">
-            <div class="elements__rectangle"></div>
-            <h2 class="elements__header"></h2>
-            <button class="elements__like"></button>
-        </div>
-        <div class="elements__element">
-            <img src="" alt="" class="elements__image">
-            <div class="elements__rectangle"></div>
-            <h2 class="elements__header"></h2>
-            <button class="elements__like"></button>
-        </div>
-        <div class="elements__element">
-            <img src="" alt="" class="elements__image">
-            <div class="elements__rectangle"></div>
-            <h2 class="elements__header"></h2>
-            <button class="elements__like"></button>
-        </div>
-        <div class="elements__element">
-            <img src="" alt="" class="elements__image">
-            <div class="elements__rectangle"></div>
-            <h2 class="elements__header"></h2>
-            <button class="elements__like"></button>
-        </div>
-        <div class="elements__element">
-            <img src="" alt="" class="elements__image">
-            <div class="elements__rectangle"></div>
-            <h2 class="elements__header"></h2>
-            <button class="elements__like"></button>
-        </div>
-    </main>
-    <footer class="footer">
-        <p class="footer__text"></p>
-    </footer>
+        </section>
+        <main class="elements">
+            <div class="elements__element">
+                <img src="./images/karachaevsk.jpg" alt="Карачаевск" class="elements__image">
+                <div class="elements__rectangle">
+                    <h2 class="elements__header">Карачаевск</h2>
+                    <button class="elements__like"><img src="./images/elements__like.svg" alt="Лайк"
+                            class="elements__like-image"></button>
+                </div>
+            </div>
+            <div class="elements__element">
+                <img src="./images/elbrus.jpg" alt="Гора Эльбрус" class="elements__image">
+                <div class="elements__rectangle">
+                    <h2 class="elements__header">Гора Эльбрус</h2>
+                    <button class="elements__like"><img src="./images/elements__like.svg" alt="Лайк"
+                            class="elements__like-image"></button>
+                </div>
+            </div>
+            <div class="elements__element">
+                <img src="./images/dombay.jpg" alt="Домбай" class="elements__image">
+                <div class="elements__rectangle">
+                    <h2 class="elements__header">Домбай</h2>
+                    <button class="elements__like"><img src="./images/elements__like.svg" alt="Лайк"
+                            class="elements__like-image"></button>
+                </div>
+            </div>
+            <div class="elements__element">
+                <img src="./images/elbrus.jpg" alt="Эльбрус" class="elements__image">
+                <div class="elements__rectangle">
+                    <h2 class="elements__header">Гора Эльбрус</h2>
+                    <button class="elements__like"><img src="./images/elements__like.svg" alt="Лайк"
+                            class="elements__like-image"></button>
+                </div>
+            </div>
+            <div class="elements__element">
+                <img src="./images/dombay.jpg" alt="Домбай" class="elements__image">
+                <div class="elements__rectangle">
+                    <h2 class="elements__header">Домбай</h2>
+                    <button class="elements__like"><img src="./images/elements__like.svg" alt="Лайк"
+                            class="elements__like-image"></button>
+                </div>
+            </div>
+            <div class="elements__element">
+                <img src="./images/karachaevsk.jpg" alt="Карачаево-Черкесия" class="elements__image">
+                <div class="elements__rectangle">
+                    <h2 class="elements__header">Карачаево-Ч...</h2>
+                    <button class="elements__like"><img src="./images/elements__like.svg" alt="Лайк"
+                            class="elements__like-image"></button>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">© 2020 Mesto Russia</p>
+        </footer>
+    </div>
 </body>
 
 </html>
