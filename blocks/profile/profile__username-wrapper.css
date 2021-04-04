@@ -4,3 +4,9 @@
     align-items: center;
     margin: 22px 0 16px 0;
 }
+
+@media (max-width:480px) {
+    .profile__username-wrapper {
+        margin: 22px 0 14px 28px;
+    }
+}

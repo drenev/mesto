@@ -2,3 +2,17 @@
     margin: 45px auto 60px auto;
     max-width: 880px;
 }
+
+@media (max-width:979px) {
+    .wrapper {}
+}
+
+@media (max-width:768px) {
+    .wrapper {}
+}
+
+@media (max-width:480px) {
+    .wrapper {
+        margin: 28px auto 36px auto;
+    }
+}
