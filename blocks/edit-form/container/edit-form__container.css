@@ -3,4 +3,13 @@
     width: 430px;
     border-radius: 10px;
     background-color: white;
+    margin-left: -48.28px;
+}
+
+@media (max-width:560px) {
+    .edit-form__container {
+        margin-left: -36.7px;
+        width: 282px;
+        height: 322px;
+    }
 }

@@ -12,5 +12,5 @@
     overflow: auto;
     z-index: 10000;
     text-align: left;
-    /* display: none; */
+    display: none;
 }

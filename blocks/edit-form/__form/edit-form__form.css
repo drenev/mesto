@@ -2,3 +2,10 @@
     margin: 34px auto 37px auto;
     width: 358px;
 }
+
+@media (max-width:560px) {
+    .edit-form__form {
+        margin: 25px auto 25px auto;
+        width: 238px;
+    }
+}

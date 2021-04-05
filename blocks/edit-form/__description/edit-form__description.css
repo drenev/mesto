@@ -18,3 +18,9 @@
 .edit-form__description:focus-visible {
     outline: none;
 }
+
+@media (max-width:560px) {
+    .edit-form__descriptionr {
+        margin: 0 0 45px 0;
+    }
+}

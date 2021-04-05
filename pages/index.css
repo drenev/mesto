@@ -32,3 +32,5 @@
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__add-button-image/profile__add-button-image.css);
+@import url(../blocks/edit-form/__close-icon-image/edit-form__close-icon-image.css);
+@import url(../blocks/edit-form/_opened/edit-form_opened.css);

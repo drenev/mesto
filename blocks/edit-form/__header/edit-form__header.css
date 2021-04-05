@@ -8,3 +8,11 @@
     text-align: left;
     margin: 0 0 54px 0;
 }
+
+@media (max-width:560px) {
+    .edit-form__header {
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0 0 75px 0;
+    }
+}
