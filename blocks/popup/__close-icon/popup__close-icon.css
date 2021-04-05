@@ -1,24 +1,25 @@
-.edit-form__close-icon {
+.popup__close-icon {
     padding: 0;
     margin: 0;
     width: 48.28px;
     height: 48.28px;
     background-color: rgba(0, 0, 0, 0);
     border: 0;
-    position: relative;
-    top: -185px;
-    left: 420px;
+    position: absolute;
+    top: -50px;
+    right: -40px;
+    cursor: pointer;
 }
 
-.edit-form__close-icon:hover {
+.popup__close-icon:hover {
     opacity: 0.6;
 }
 
 @media (max-width:560px) {
-    .edit-form__close-icon {
+    .popup__close-icon {
         width: 36.7px;
         height: 36.7px;
-        top: -185px;
-        left: 245.3px;
+        top: -40px;
+        right: -10px;
     }
 }

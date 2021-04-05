@@ -5,6 +5,7 @@
     height: 24px;
     border: 1px solid #FFFFFF;
     align-self: center;
+    cursor: pointer;
 }
 
 .profile__edit-button:hover {
