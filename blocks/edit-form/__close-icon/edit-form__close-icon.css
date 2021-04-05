@@ -10,6 +10,10 @@
     left: 420px;
 }
 
+.edit-form__close-icon:hover {
+    opacity: 0.6;
+}
+
 @media (max-width:560px) {
     .edit-form__close-icon {
         width: 36.7px;
