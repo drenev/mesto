@@ -7,4 +7,4 @@
 Проект написан на HTML + CSS + JavaScript
 
 ### Ссылка на GitHub Pages
-Мне GitHub Pages предлагает оплатить подписку, пока не получается выложить
+https://safelbob.github.io/mesto/
