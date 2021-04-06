@@ -9,7 +9,7 @@
     text-align: left;
     color: white;
     text-overflow: ellipsis;
-    max-width: 500px;
+    max-width: 350px;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -20,5 +20,6 @@
         line-height: 17px;
         text-align: center;
         margin: 0 0 36px 0;
+        max-width: 260px;
     }
 }
