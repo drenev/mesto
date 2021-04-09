@@ -29,3 +29,50 @@ function saveInfo(event) {
 editButton.addEventListener('click', openPopup);
 closeButton.addEventListener('click', closePopup);
 popupForm.addEventListener('submit', saveInfo);
+
+
+
+
+let elementTemplate = document.querySelector('.elements__template').content;
+let elements = document.querySelector('.elements');
+
+
+let elementName = elementTemplate.querySelector('.elements__header');
+let elementImage = elementTemplate.querySelector('.elements__image');
+
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+
+function cardsGenerator(arrayEl) {
+    elementName.textContent = arrayEl.name; //Меняет заголовок у карточки на данные из массива
+    elementImage.setAttribute('alt', arrayEl.name); //Меняет alt у картинки
+    elementImage.setAttribute('src', arrayEl.link); //Добавляет картинку
+    let cardElement = elementTemplate.querySelector('.elements__element').cloneNode(true);
+    elements.prepend(cardElement);
+};
+
+initialCards.forEach(cardsGenerator);
