@@ -1,0 +1,18 @@
+.image-popup__pickture {
+    max-height: 540px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-height:660px) {
+    .image-popup__pickture {
+        max-height: 400px;
+    }
+}
+
+@media (max-height:480px) {
+    .image-popup__pickture {
+        max-height: 299px;
+    }
+}

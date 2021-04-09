@@ -2,6 +2,7 @@
 let popup = document.querySelector('.popup');
 let popupMesto = document.querySelector('.popup_type_mesto');
 let popupForm = document.querySelector('.popup__form');
+let popupImage = document.querySelector('.image-popup');
 let editButton = document.querySelector('.profile__edit-button');
 let closeButton = document.querySelectorAll('.popup__close-icon');
 
@@ -17,12 +18,14 @@ function openPopup() {
     formDescription.value = profileDescription.textContent;
 }
 
+
+closeButton.forEach(closePopup);
 function closePopup() {
     popup.classList.remove('popup_opened');
     popupMesto.classList.remove('popup_opened');
+    popupImage.classList.remove('image-popup_active');
 }
 
-closeButton.forEach(closePopup);
 
 function saveInfo(event) {
     event.preventDefault();
@@ -133,3 +136,31 @@ function like(likeButton) {
     })
 }
 
+///Удаление карточки
+let removeButtons = document.querySelectorAll('.elements__remove');
+removeButtons.forEach(removeElement);
+function removeElement(removeButton) {
+    removeButton.addEventListener('click', function removeParrent() {
+        removeButton.parentNode.remove();
+    });
+};
+
+/// Кликабельная картинка
+let elementPictures = document.querySelectorAll('.elements__image');
+elementPictures.forEach(imagePopup);
+function imagePopup(image) {
+    image.addEventListener('click', openImagePopup);
+    function openImagePopup() {
+        let header = image.parentNode.querySelector('.elements__header');
+        let imageLink = image.getAttribute('src');
+        let popupHeader = document.querySelector('.image-popup__header');
+        let popupImage = document.querySelector('.image-popup__pickture');
+        let popupContainer = document.querySelector('.image-popup');
+        popupHeader.textContent = header.textContent;
+        popupImage.setAttribute('alt', header.textContent);
+        popupImage.setAttribute('src', imageLink);
+        popupCloned = document.querySelector('.image-popup');
+        popupCloned.classList.add('image-popup_active');
+    }
+
+}
