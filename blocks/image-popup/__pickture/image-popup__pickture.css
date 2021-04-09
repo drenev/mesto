@@ -5,14 +5,16 @@
     display: block;
 }
 
-@media (max-height:660px) {
+@media (max-width:1270px) {
     .image-popup__pickture {
-        max-height: 400px;
+        max-height: 600px;
+        max-height: 350px;
     }
 }
 
-@media (max-height:480px) {
+@media (max-width:840px) {
     .image-popup__pickture {
         max-height: 299px;
+        max-width: 240px;
     }
 }
