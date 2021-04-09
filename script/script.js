@@ -5,6 +5,7 @@ let popupForm = document.querySelector('.popup__form');
 let popupImage = document.querySelector('.image-popup');
 let editButton = document.querySelector('.profile__edit-button');
 let closeButton = document.querySelectorAll('.popup__close-icon');
+let popupCloseButton = document.querySelector('.image-popup__close-icon')
 
 let formName = document.querySelector('.popup__input_text_name');
 let formDescription = document.querySelector('.popup__input_text_description');
@@ -25,6 +26,9 @@ function closePopup() {
     popupMesto.classList.remove('popup_opened');
     popupImage.classList.remove('image-popup_active');
 }
+
+popupCloseButton.addEventListener('click', closePopup);
+
 
 
 function saveInfo(event) {
