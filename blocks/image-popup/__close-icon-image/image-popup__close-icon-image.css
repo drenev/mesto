@@ -1,8 +1,0 @@
-.image-popup__close-icon-image {}
-
-@media (max-width:560px) {
-    .popup__close-icon-image {
-        width: 36.7px;
-        height: 36.7px;
-    }
-}
