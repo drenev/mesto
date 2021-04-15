@@ -4,7 +4,7 @@ const popupProfile = document.querySelector(".popup_type_profile");
 const popupMesto = document.querySelector(".popup_type_mesto");
 const popupImage = document.querySelector(".popup_type_image");
 
-const popupProfileForm = document.querySelector(".popup__form");
+const popupForm = document.querySelector(".popup__form");
 
 const editButton = document.querySelector(".profile__edit-button");
 const closeButton = document.querySelectorAll(".popup__close-icon");
@@ -49,7 +49,7 @@ closeButton.forEach(function (closeButtonEl) {
   closeButtonEl.addEventListener("click", () => closeModal(popupParent));
 });
 editButton.addEventListener("click", openPopupProfile);
-popupProfileForm.addEventListener("submit", saveInfo);
+popupForm.addEventListener("submit", saveInfo);
 addButton.addEventListener("click", openPopupMesto);
 
 ///Тут написан код для первой генерации карточек на странице
@@ -93,28 +93,31 @@ const elements = document.querySelector(".elements");
 const elementName = elementTemplate.querySelector(".elements__header");
 const elementImage = elementTemplate.querySelector(".elements__image");
 
-function renderCard(cardName, cardImage) {
-  elementName.textContent = cardName; ///Меняет заголовок у карточки
-  elementImage.setAttribute("alt", cardName); ///Меняет alt у картинки
-  elementImage.setAttribute("src", cardImage); ///Добавляет картинку
-}
-
 function createCard(cardName, cardImage) {
-  renderCard(cardName, cardImage);
   const elementClone = elementTemplate
     .querySelector(".elements__element")
-    .cloneNode(true); /// Создаёт клона из отрендеренной карточки
+    .cloneNode(true); /// Клонирует пустой шаблок
   const removeButton = elementClone.querySelector(".elements__remove");
+  const cloneImage = elementClone.querySelector(".elements__image");
+  const cloneLke = elementClone.querySelector(".elements__like");
+  const cloneName = elementClone.querySelector(".elements__header");
+
+  cloneName.textContent = cardName; ///Меняет заголовок у карточки
+  cloneImage.setAttribute("alt", cardName); ///Меняет alt у картинки
+  cloneImage.setAttribute("src", cardImage); ///Добавляет картинку
+
   removeButton.addEventListener("click", function () {
     removeButton.parentNode.remove(); /// Функция удаления карточки/добавление слушаетеля
   });
-  const cloneImage = elementClone.querySelector(".elements__image");
   cloneImage.addEventListener("click", () => openPopupImage(cloneImage)); /// Слушатель для открытия попапа
-  const cloneLke = elementClone.querySelector(".elements__like");
   cloneLke.addEventListener("click", function () {
     cloneLke.classList.toggle("elements__like_active"); /// Функция лайка
   });
-  elements.prepend(elementClone);
+  return elementClone;
+}
+
+function renderCard(card) {
+  elements.prepend(card);
 }
 
 ///Добавление карточки на сайте
@@ -123,16 +126,18 @@ const inputNameOfPlace = document.querySelector(
 );
 const inputImage = document.querySelector('input[name="inputImage"]');
 const createButton = document.querySelector('input[name="createButton"]');
-createButton.addEventListener("click", submitCardForm);
+document.forms.formEditMesto.addEventListener("submit", submitCardForm);
 
 function submitCardForm(event) {
   event.preventDefault();
-  createCard(inputNameOfPlace.value, inputImage.value);
+  let newCard = createCard(inputNameOfPlace.value, inputImage.value);
+  renderCard(newCard);
   closeModal(popupMesto);
 }
 /// Первая генерация карточек
 function initialСardsGenerator(arrayEl) {
-  createCard(arrayEl.name, arrayEl.link);
+  let newCard = createCard(arrayEl.name, arrayEl.link);
+  renderCard(newCard);
 }
 initialCards.forEach(initialСardsGenerator);
 
