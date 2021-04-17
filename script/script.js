@@ -1,5 +1,5 @@
 /// Тут написан код для формы изменения имени
-const popup = document.querySelectorAll(".popup");
+const popups = document.querySelectorAll(".popup");
 const popupProfile = document.querySelector(".popup_type_profile");
 const popupMesto = document.querySelector(".popup_type_mesto");
 const popupImage = document.querySelector(".popup_type_image");
@@ -7,7 +7,7 @@ const popupImage = document.querySelector(".popup_type_image");
 const popupForm = document.querySelector(".popup__form");
 
 const editButton = document.querySelector(".profile__edit-button");
-const closeButton = document.querySelectorAll(".popup__close-icon");
+const closeButtons = document.querySelectorAll(".popup__close-icon");
 
 const formName = document.querySelector(".popup__input_text_name");
 const formDescription = document.querySelector(
@@ -49,9 +49,9 @@ function saveInfo(event) {
   formName.parentNode.reset();
 }
 
-closeButton.forEach(function (closeButtonEl) {
-  const popupParent = closeButtonEl.parentNode.parentNode;
-  closeButtonEl.addEventListener("click", () => closeModal(popupParent));
+closeButtons.forEach(function (closeButtonsEl) {
+  const popupParent = closeButtonsEl.parentNode.parentNode;
+  closeButtonsEl.addEventListener("click", () => closeModal(popupParent));
 });
 editButton.addEventListener("click", openPopupProfile);
 popupForm.addEventListener("submit", saveInfo);
@@ -114,7 +114,9 @@ function createCard(cardName, cardImage) {
   removeButton.addEventListener("click", function () {
     removeButton.parentNode.remove(); /// Функция удаления карточки/добавление слушаетеля
   });
-  cloneImage.addEventListener("click", () => openPopupImage(cloneImage)); /// Слушатель для открытия попапа
+  cloneImage.addEventListener("click", () =>
+    openPopupImage(cardName, cardImage)
+  ); /// Слушатель для открытия попапа
   cloneLke.addEventListener("click", function () {
     cloneLke.classList.toggle("elements__like_active"); /// Функция лайка
   });
@@ -150,29 +152,26 @@ initialCards.forEach(initialСardsGenerator);
 const popupHeader = document.querySelector(".popup__image-header");
 const popupImagePic = document.querySelector(".popup__image");
 
-function openPopupImage(image) {
-  const header = image.parentNode.querySelector(".elements__header");
-  const imageLink = image.getAttribute("src");
-  popupHeader.textContent = header.textContent;
-  popupImagePic.setAttribute("alt", header.textContent);
-  popupImagePic.setAttribute("src", imageLink);
-  popupCloned = document.querySelector(".popup_type_image");
-  openModal(popupCloned);
+function openPopupImage(cardName, cardImage) {
+  popupHeader.textContent = cardName;
+  popupImagePic.setAttribute("alt", cardName);
+  popupImagePic.setAttribute("src", cardImage);
+  openModal(popupImage);
 }
 
-function closeOnEsc(button) {
-  const popupOpened = document.querySelector(".popup_opened");
-  if (button.key === "Escape") {
+function closeOnEsc(event) {
+  if (event.key === "Escape") {
+    const popupOpened = document.querySelector(".popup_opened");
     closeModal(popupOpened);
   }
 }
 
 function closeOnClick(evt) {
-  const popupOpened = document.querySelector(".popup_opened");
   if (
     evt.target.classList.contains("popup") ||
     evt.target.classList.contains("popup__close")
   ) {
+    const popupOpened = document.querySelector(".popup_opened");
     closeModal(popupOpened);
   }
 }

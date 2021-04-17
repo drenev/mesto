@@ -7,6 +7,16 @@ const settings = {
   errorClass: "popup__input-error_active",
 };
 
+function makeButtonInactive(button) {
+  button.classList.remove(settings.inactiveButtonClass);
+  button.setAttribute("type", "submit");
+}
+
+function makeButtonActive(button) {
+  button.classList.add(settings.inactiveButtonClass);
+  button.setAttribute("type", "button");
+}
+
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
@@ -37,11 +47,9 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement) => {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(settings.inactiveButtonClass);
-    buttonElement.setAttribute("type", "button");
+    makeButtonActive(buttonElement);
   } else {
-    buttonElement.classList.remove(settings.inactiveButtonClass);
-    buttonElement.setAttribute("type", "submit");
+    makeButtonInactive(buttonElement);
   }
 };
 
@@ -52,6 +60,9 @@ const setEventListeners = (formElement) => {
   const buttonElement = formElement.querySelector(
     settings.submitButtonSelector
   );
+  buttonElement.parentNode.addEventListener("submit", () => {
+    toggleButtonState(inputList, buttonElement);
+  });
   toggleButtonState(inputList, buttonElement);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
