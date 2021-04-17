@@ -1,100 +1,162 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Место</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Место</title>
-  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="./pages/index.css" />
-</head>
-
-<body class="body">
-  <div class="wrapper">
-    <header class="header">
-      <img src="./images/header__logo.svg" alt="Логотип" class="header__logo" />
-    </header>
-    <main class="page">
-      <section class="profile">
-        <img src="./images/profile__avatar.jpg" alt="Аватарка" class="profile__avatar" />
-        <div class="profile__info">
-          <div class="profile__username-wrapper">
-            <h1 class="profile__username">Жак-Ив Кусто</h1>
-            <button type="button" class="profile__edit-button">
-              <img src="./images/profile__edit-button.svg" alt="Кнопка" class="profile__edit-button-image" />
-            </button>
+  <body class="body">
+    <div class="wrapper">
+      <header class="header">
+        <img
+          src="./images/header__logo.svg"
+          alt="Логотип"
+          class="header__logo"
+        />
+      </header>
+      <main class="page">
+        <section class="profile">
+          <img
+            src="./images/profile__avatar.jpg"
+            alt="Аватарка"
+            class="profile__avatar"
+          />
+          <div class="profile__info">
+            <div class="profile__username-wrapper">
+              <h1 class="profile__username">Жак-Ив Кусто</h1>
+              <button type="button" class="profile__edit-button">
+                <img
+                  src="./images/profile__edit-button.svg"
+                  alt="Кнопка"
+                  class="profile__edit-button-image"
+                />
+              </button>
+            </div>
+            <p class="profile__description">Исследователь океана</p>
           </div>
-          <p class="profile__description">Исследователь океана</p>
-        </div>
-        <button type="button" class="profile__add-button">
-          <img src="./images/profile__add-button-image.svg" alt="Кнопка" class="profile__add-button-image" />
-        </button>
-      </section>
+          <button type="button" class="profile__add-button">
+            <img
+              src="./images/profile__add-button-image.svg"
+              alt="Кнопка"
+              class="profile__add-button-image"
+            />
+          </button>
+        </section>
 
-      <section class="elements"></section>
-    </main>
-    <footer class="footer">
-      <p class="footer__text">&copy; 2020 Mesto Russia</p>
-    </footer>
-  </div>
-  <div class="popup popup_type_profile">
-    <div class="popup__container">
-      <button type="button" class="popup__close-icon">
-        <img src="./images/close-icon.svg" alt="Закрыть" class="popup__close-icon-image" />
-      </button>
-      <form name="formEditProfile" class="popup__form">
-        <h2 class="popup__header">Редактировать профиль</h2>
-        <input name="inputName" type="text" class="popup__input popup__input_text_name" />
-        <input name="inputDescription" type="text" class="popup__input popup__input_text_description" />
-        <input type="submit" class="popup__button" value="Сохранить" />
-      </form>
+        <section class="elements"></section>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">&copy; 2020 Mesto Russia</p>
+      </footer>
     </div>
-  </div>
-  <div class="popup popup_type_mesto">
-    <div class="popup__container">
-      <button type="button" class="popup__close-icon">
-        <img src="./images/close-icon.svg" alt="Закрыть" class="popup__close-icon-image" />
-      </button>
-      <form name="formEditMesto" class="popup__form">
-        <h2 class="popup__header">Новое место</h2>
-        <input name="inputNameOfPlace" placeholder="Название" type="text" class="popup__input popup__input_text_name" />
-        <input name="inputImage" placeholder="Ссылка на картинку" type="text"
-          class="popup__input popup__input_text_description" />
-        <input name="createButton" type="submit" class="popup__button" value="Создать" />
-      </form>
-    </div>
-  </div>
-  <div class="popup popup_type_image">
-    <div class="popup__image-container">
-      <button type="button" class="popup__close-icon">
-        <img src="./images/close-icon.svg" alt="Закрыть" class="popup__close-icon-image" />
-      </button>
-      <img src="#" alt="#" class="popup__image" />
-      <h3 class="popup__image-header"></h3>
-    </div>
-  </div>
-  <template class="elements__template">
-    <div class="elements__element">
-      <button class="elements__remove"></button>
-      <img src="#" alt="#" class="elements__image" />
-      <div class="elements__rectangle">
-        <h2 class="elements__header"></h2>
-        <button type="button" class="elements__like"></button>
+    <div class="popup popup_type_profile">
+      <div class="popup__container">
+        <button type="button" class="popup__close-icon">
+          <img
+            src="./images/close-icon.svg"
+            alt="Закрыть"
+            class="popup__close-icon-image"
+          />
+        </button>
+        <form name="formEditProfile" class="popup__form" novalidate>
+          <h2 class="popup__header">Редактировать профиль</h2>
+          <input
+            name="inputName"
+            id="inputName"
+            type="text"
+            class="popup__input popup__input_text_name"
+            required
+            minlength="2"
+            maxlength="40"
+          />
+          <span class="popup__input-error inputName-error"></span>
+          <input
+            name="inputDescription"
+            id="inputDescription"
+            type="text"
+            class="popup__input popup__input_text_description"
+            required
+            minlength="2"
+            maxlength="200"
+          />
+          <span class="popup__input-error inputDescription-error"></span>
+          <input
+            name="saveProfile"
+            type="submit"
+            class="popup__button"
+            value="Сохранить"
+          />
+        </form>
       </div>
     </div>
-  </template>
-
-  <!-- <div class="image-popup">
-        <div class="image-popup__container">
-            <button type="button" class="image-popup__close-icon"><img src="./images/close-icon.svg" alt="Закрыть"
-                    class="image-popup__close-icon-image"></button>
-            <img src="#" alt="#" class="image-popup__pickture">
-            <h3 class="image-popup__header"></h3>
+    <div class="popup popup_type_mesto">
+      <div class="popup__container">
+        <button type="button" class="popup__close-icon">
+          <img
+            src="./images/close-icon.svg"
+            alt="Закрыть"
+            class="popup__close-icon-image"
+          />
+        </button>
+        <form name="formEditMesto" class="popup__form" novalidate>
+          <h2 class="popup__header">Новое место</h2>
+          <input
+            name="inputNameOfPlace"
+            id="inputNameOfPlace"
+            placeholder="Название"
+            type="text"
+            class="popup__input popup__input_text_name"
+            required
+            minlength="2"
+            maxlength="30"
+          />
+          <span class="popup__input-error inputNameOfPlace-error"></span>
+          <input
+            name="inputImage"
+            id="inputImage"
+            placeholder="Ссылка на картинку"
+            type="url"
+            class="popup__input popup__input_text_description"
+            required
+          />
+          <span class="popup__input-error inputImage-error"></span>
+          <input
+            name="createButton"
+            type="submit"
+            class="popup__button"
+            value="Создать"
+          />
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_image">
+      <div class="popup__image-container">
+        <button type="button" class="popup__close-icon">
+          <img
+            src="./images/close-icon.svg"
+            alt="Закрыть"
+            class="popup__close-icon-image"
+          />
+        </button>
+        <img src="#" alt="#" class="popup__image" />
+        <h3 class="popup__image-header"></h3>
+      </div>
+    </div>
+    <template class="elements__template">
+      <div class="elements__element">
+        <button class="elements__remove"></button>
+        <img src="#" alt="#" class="elements__image" />
+        <div class="elements__rectangle">
+          <h2 class="elements__header"></h2>
+          <button type="button" class="elements__like"></button>
         </div>
-    </div> -->
-
-  <script src="./script/script.js" defer></script>
-</body>
-
+      </div>
+    </template>
+    <script src="./script/script.js" defer></script>
+    <script src="./script/validate.js" defer></script>
+  </body>
 </html>

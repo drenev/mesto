@@ -21,6 +21,8 @@ const addButton = document.querySelector(".profile__add-button");
 
 function openModal(modal) {
   modal.classList.add("popup_opened");
+  document.addEventListener("keydown", closeOnEsc);
+  document.addEventListener("click", closeOnClick);
 }
 
 function openPopupProfile() {
@@ -35,6 +37,8 @@ function openPopupMesto() {
 
 function closeModal(modal) {
   modal.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closeOnEsc);
+  document.removeEventListener("click", closeOnClick);
 }
 
 function saveInfo(event) {
@@ -125,18 +129,17 @@ const inputNameOfPlace = document.querySelector(
   'input[name="inputNameOfPlace"]'
 );
 const inputImage = document.querySelector('input[name="inputImage"]');
-const createButton = document.querySelector('input[name="createButton"]');
 document.forms.formEditMesto.addEventListener("submit", submitCardForm);
 
 function submitCardForm(event) {
   event.preventDefault();
-  let newCard = createCard(inputNameOfPlace.value, inputImage.value);
+  const newCard = createCard(inputNameOfPlace.value, inputImage.value);
   renderCard(newCard);
   closeModal(popupMesto);
 }
 /// Первая генерация карточек
 function initialСardsGenerator(arrayEl) {
-  let newCard = createCard(arrayEl.name, arrayEl.link);
+  const newCard = createCard(arrayEl.name, arrayEl.link);
   renderCard(newCard);
 }
 initialCards.forEach(initialСardsGenerator);
@@ -153,4 +156,21 @@ function openPopupImage(image) {
   popupImagePic.setAttribute("src", imageLink);
   popupCloned = document.querySelector(".popup_type_image");
   openModal(popupCloned);
+}
+
+function closeOnEsc(button) {
+  const popupOpened = document.querySelector(".popup_opened");
+  if (button.key === "Escape") {
+    closeModal(popupOpened);
+  }
+}
+
+function closeOnClick(evt) {
+  const popupOpened = document.querySelector(".popup_opened");
+  if (
+    evt.target.classList.contains("popup") ||
+    evt.target.classList.contains("popup__close")
+  ) {
+    closeModal(popupOpened);
+  }
 }
