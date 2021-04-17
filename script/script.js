@@ -39,7 +39,6 @@ function closeModal(modal) {
   modal.classList.remove("popup_opened");
   document.removeEventListener("keydown", closeOnEsc);
   document.removeEventListener("click", closeOnClick);
-  modal.querySelector(".popup__form").reset();
 }
 
 function saveInfo(event) {
@@ -47,6 +46,7 @@ function saveInfo(event) {
   profileName.textContent = formName.value;
   profileDescription.textContent = formDescription.value;
   closeModal(popupProfile);
+  formName.parentNode.reset();
 }
 
 closeButton.forEach(function (closeButtonEl) {
@@ -137,6 +137,7 @@ function submitCardForm(event) {
   const newCard = createCard(inputNameOfPlace.value, inputImage.value);
   renderCard(newCard);
   closeModal(popupMesto);
+  inputNameOfPlace.parentNode.reset();
 }
 /// Первая генерация карточек
 function initialСardsGenerator(arrayEl) {
