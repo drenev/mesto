@@ -39,6 +39,7 @@ function closeModal(modal) {
   modal.classList.remove("popup_opened");
   document.removeEventListener("keydown", closeOnEsc);
   document.removeEventListener("click", closeOnClick);
+  modal.querySelector(".popup__form").reset();
 }
 
 function saveInfo(event) {
