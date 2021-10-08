@@ -7,4 +7,4 @@
 Проект написан на HTML + CSS + JavaScript
 
 ### Ссылка на GitHub Pages
-https://safelbob.github.io/mesto/
+https://drenev.github.io/mesto/
